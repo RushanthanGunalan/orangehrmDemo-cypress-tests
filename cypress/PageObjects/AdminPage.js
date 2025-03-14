@@ -39,7 +39,8 @@ class AdminPage {
   }
 
   AddUserRoleandVerify(userRole) {
-    cy.get(".oxd-select-text").eq(0).click(); //Pinpointing the locator of the first dropdown
+    cy.get("div.oxd-select-text-input").eq(0).click(); //Pinpointing the locator of the first dropdown
+    cy.get("div[role='listbox']").contains(userRole).click(); // Selecting and option from the Dropdown
   }
 }
 
