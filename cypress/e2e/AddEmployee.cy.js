@@ -61,7 +61,7 @@ describe("navigation Test to PIM page and Click Add Employee Button", () => {
     pp.validateLoginDetails(userName, passWord, firstName, lastName);
   });
 
-  it("Add Employee Details with optional fields as well and Create Login Credentials with status enabled", () => {
+  it("Add Employee Details with oe without optional fields as well and Create Login Credentials with status enabled", () => {
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
     const middleName = faker.person.middleName();
@@ -90,15 +90,15 @@ describe("navigation Test to PIM page and Click Add Employee Button", () => {
     pp.validateLoginDetails(userName, passWord, firstName, lastName);
   });
 
-  it("Add Employee Details with optional fields as well and Create Login Credentials with status disabled", () => {
+  it("Add Employee Details with or without Optional fields and Create Login Credentials with status disabled", () => {
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
-    const middleName = faker.person.middleName();
+    // const middleName = faker.person.middleName();
     const userName = faker.internet.username();
     const passWord = faker.internet.password((length = 7));
     const randomID = faker.string.alphanumeric(6);
 
-    pp.addEmployeeDetails(firstName, lastName, middleName);
+    pp.addEmployeeDetails(firstName, lastName /*middleName*/);
 
     pp.createLoginDetailsWithStatusDisabled(
       randomID,
@@ -112,8 +112,8 @@ describe("navigation Test to PIM page and Click Add Employee Button", () => {
     pp.validateEmployeeDetails(
       "/pim/viewPersonalDetails",
       firstName,
-      lastName,
-      middleName
+      lastName
+      // middleName
     );
 
     pp.disabledLoginDetails(userName, passWord, firstName, lastName);
