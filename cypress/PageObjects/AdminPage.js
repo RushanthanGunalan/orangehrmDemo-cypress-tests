@@ -30,6 +30,7 @@ class AdminPage {
   }
 
   //Adding User from User Save URL
+  //
 
   clickAddandVerifyURL(urlFragment) {
     cy.get(
