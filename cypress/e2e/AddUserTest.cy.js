@@ -15,6 +15,7 @@ describe("navigation Test to Sub sections of Admin Page", () => {
     ln.clickSubmit();
     ap.verifyAdminPageisLoaded();
   });
+  
 
   it("Add User from Save User URL", () => {
     ap.clickAddandVerifyURL("/admin/saveSystemUser");
